@@ -1,0 +1,98 @@
+<script>
+    let database = [];
+    class Product {
+            constructor(_name, _stock, _harga,) {
+                this.name = _name;
+                this.stock = _stock;
+                this.harga = _harga;
+                  }
+             }
+                class Fnb extends Product {
+                    constructor(_name, _stock, _harga, _type, _expDate) {
+                        super(_name, _stock, _harga);
+                        this.type = _type;
+                        this.expDate = _expDate;
+                    }
+                }
+                
+    let konfirmasi = true;
+    const printData = () => {
+        return database.map((value, idx) => {
+            return `${idx + 1}. ${value.name}, Stoknya ${value.stock}, IDR ${value.price}`
+        }).join("\n");
+
+    }
+    while (konfirmasi) {
+        let menu = parseInt(prompt(`Selamat Datang di Tokoku :
+        1. Cek Stock
+        2. Beli Produk
+        3. Tambah Produk
+        `))
+
+        if (menu == 1) {
+            alert(`List Produk Tokoku :\n${printData()}`)
+        } else if (menu == 2) {
+            let beli = parseInt(prompt(`Silahkan pilih barang :
+            1. Jaket stoknya 20, IDR, 150000
+            2. Kaos stoknya 10, IDR, 35000
+            3. Sepatu stoknya 25, IDR 75000
+            `));
+        
+            let inputBeli = parseInt(prompt(`Beli berapa?`));
+            // console.log(inputBeli, database[beli - 1].stock)
+           if (inputBeli > database[beli-1].stock){
+               alert(`Stok tidak mencukupi`);
+           } else{
+               let uangAnda = parseInt(prompt(`Total belanja anda : IDR ${database[beli-1].price*inputBeli}
+               Masukan uang anda `));
+                if (uangAnda < (database[beli - 1].price * inputBeli)){
+                   alert(`Uang tidak mencukupi`);  
+                } else{
+                    alert(`Total kembalian uang anda IDR : ${uangAnda - (database[beli - 1].price * inputBeli)}`);
+                    database[beli-1].stock -= inputBeli;
+                }
+            }
+        } if (menu == 3) {
+            let pilih = prompt(`Pilih Produk:
+            1. Non Fnb
+            2. FnB`);
+            if (pilih == 1){
+                let tambah = [
+                    {
+                        _name: "",
+                        _stock: "",
+                        _harga: "",
+
+                    }
+
+                ];
+                tambah.name = prompt(`Masukkan nama produk baru`);
+                tambah.stock = prompt(`Masukkan stock produk baru`);
+                tambah.harga = prompt(`Masukkan harga produk baru`);
+                database.push(new Product(tambah.name, tambah.stock, tambah.harga));
+                }else if (pilih ==2){
+                let tambah2 = [
+                    {
+                        _name: "",
+                        _stock: "",
+                        _harga: "",
+                        _type: "",
+                        _expDate: "",
+
+                    }
+
+                ];
+                tambah2.name = prompt(`Masukkan nama produk baru`);
+                tambah2.stock = prompt(`Masukkan stock produk baru`);
+                tambah2.harga = prompt(`Masukkan harga produk baru`);
+                tambah2.type = prompt(`Masukkan type produk baru`);
+                tambah2.expDate = prompt(`Masukkan expDate produk baru`);
+                database.push(new Fnb(tambah2.name, tambah2.stock, tambah2.harga, tambah2.type, tambah2.expDate));
+                console.log(database);
+            }
+        }
+           konfirmasi = confirm("Kembali ke menu utama")
+        
+    
+    }
+</script>

@@ -1,0 +1,18 @@
+<script>
+let kata = prompt("Masukan kalimat")
+let vokal = ''
+for (let i = 0; i < kata.length; i++) {
+    if (kata.charAt(i).toLowerCase() == 'a' || kata.charAt(i).toLowerCase() == 'i' || kata.charAt(i).toLowerCase() == 'u' || kata.charAt(i).toLowerCase() == 'e' || kata.charAt(i).toLowerCase() == 'o'){
+        if (!vokal.includes(kata.charAt(i).toLowerCase())) {
+            vokal += kata.charAt(i).toLowerCase()
+            
+        }
+    }
+    
+}
+alert(`
+    Kalimat = ${kata}
+    Huruf vokal = ${vokal}
+    Jumlah jenis huruf vokal = ${vokal.length}
+    `)
+</script>

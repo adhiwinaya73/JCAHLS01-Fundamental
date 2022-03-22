@@ -1,0 +1,28 @@
+<script>
+let inputKalimat = prompt("Masukkan Judul:").toLowerCase();
+let kalimatBaru = " ";
+    for (let i = 0; i < inputKalimat.length; i++) {
+        if (i == 0) {
+            kalimatBaru += inputKalimat[i].toUpperCase();
+        } else
+            if (inputKalimat[i] == " " && inputKalimat[i + 1] != " ") {
+                kalimatBaru += " " + inputKalimat[i + 1].toUpperCase();
+                i++;
+            } else {
+                kalimatBaru += inputKalimat[i];
+            }
+            for (let i = 0; i < inputJudul.length; i++) {
+            if (i == 0) {
+                judulBaru += inputJudul[i].toUpperCase();
+            } else
+                if (inputJudul[i] == " " && inputJudul[i + 1] != " ") {
+                    judulBaru += " " + inputJudul[i + 1].toUpperCase();
+                    i++;
+                } else {
+                    judulBaru += inputJudul[i];
+                }
+
+    }
+    }
+
+</script>

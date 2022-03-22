@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+ let konfirmasi=true
+ while(konfirmasi){
+    let value1=Number(prompt("Masukan Angka Pertama"))
+    let value2=Number(prompt("Masukan Angka Kedua"))
+if (isNaN(value1) || (isNaN(value2))){
+    alert("input salah ❌")
+} else {
+    let text=(`Hasil Perhitungan:\n 1.Penjumlahan ${value1} + ${value2} = ${value1 + value2} \n 2.Pengurangan ${value1} - ${value2} = ${value1 - value2} \n 3.Pembagian ${value1} / ${value2} = ${value1 / value2} \n 4.Perkalian ${value1} * ${value2} = ${value1 * value2}`)
+    alert(text)
+}
+ let konfirm = confirm("Mau coba hitung lagi?")
+
+            
+    
+       
+    }
+
+
+
+</script>
+</html>

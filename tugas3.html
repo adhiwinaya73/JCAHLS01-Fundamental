@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+   let inputKalimat = prompt(`Input Kalimat :`).toLowerCase();
+    let hurufVokal = "";
+    for (let i = 0; i < inputKalimat.length; i++) {
+        let cekVokal = true;
+        if ((inputKalimat[i] == 'a') || (inputKalimat[i] == 'i') || (inputKalimat[i] == 'u') || (inputKalimat[i] == 'e') || (inputKalimat[i] == 'o')) {
+            for (let j = 0; j < hurufVokal.length; j++) {
+            if (hurufVokal[j] == inputKalimat[i]) {
+                    cekVokal = false;
+                }
+            }
+        }
+            if (cekVokal) {
+                hurufVokal += inputKalimat[i];
+            }
+              
+        }
+    alert(`Kalimat = ${inputKalimat}
+            Huruf vokal = ${hurufVokal}
+            Jumlah jenis huruf vokal = ${hurufVokal.length}`)
+</script>
+</html>
